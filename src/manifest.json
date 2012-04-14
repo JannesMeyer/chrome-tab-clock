@@ -1,0 +1,16 @@
+{
+	"name": "Tab Clock",
+	"version": "1.0",
+	"description": "Shows a clock on the 'New Tab' page.",
+
+	"icons": {
+		"48": "images/icon48.png"
+	},
+	"chrome_url_overrides": {
+		"newtab": "tab.html"
+	},
+	"background_page": "background.html",
+	"permissions": [
+		"chrome://favicon/"
+	]
+}
