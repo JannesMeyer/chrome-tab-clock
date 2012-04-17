@@ -8,11 +8,17 @@ Furthermore, it shows some convenient shortcut links at the bottom of the page.
 
 The font Myriad Pro should be installed on your system for the best experience.
 
+Protip: Disable your system's clock like this:
+
+![Screenshot of a disabled system clock](http://i.imgur.com/SDsKs.png)
+
 ## Installation
 
 Get the extension from the [Downloads section](https://github.com/JannesMeyer/Tab-Clock/downloads) or just use this link:
 
  - [Tab Clock 1.0]( https://github.com/downloads/JannesMeyer/Tab-Clock/Tab%20Clock%201.0.crx)
+
+Coming soon: Chrome Web Store download link
 
 ## License
 
