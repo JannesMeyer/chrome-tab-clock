@@ -1,15 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Tab</title>
 <style>
+/* There's no need for a better reset */
 * {
-	/* There's no need for a better reset */
 	margin: 0;
 	padding: 0;
 }
-
 body {
 	background-color: #f1f1f1;
 	font-family: sans-serif;
@@ -25,6 +24,25 @@ body {
 	-webkit-box-orient: vertical;
 	-webkit-box-pack: center;
 	-webkit-box-align: center;
+}
+.hidden {
+	display: none;
+}
+#location {
+	position: absolute;
+	top: 15%;
+	width: 100%;
+	text-align: center;
+}
+#location h2 {
+	color: #ccc;
+	font-weight: bold;
+	font-size: 1em;
+}
+#address-bar {
+	padding: 1px 0;
+	margin: 2px 0;
+	width: 310px;
 }
 .clock {
 	font-size: 8em;
@@ -135,9 +153,28 @@ function refreshTime() {
 	var secondsLeft = 60 - date.getSeconds();
 	setTimeout(refreshTime, secondsLeft * 1000);
 }
+
+function checkFullscreen() {
+	if (screen.height === window.outerHeight) {
+		// downloads bar, dev tools?
+		locationNode.classList.remove("hidden");
+		addressNode.focus();
+		return true;
+	} else {
+		locationNode.classList.add("hidden");
+		return false;
+	}
+}
 </script>
 </head>
 <body>
+
+<div id="location" class="hidden">
+	<form id="location-form">
+		<h2>Location</h2>
+		<input type="text" id="address-bar" />
+	</form>
+</div>
 
 <div id="clock" class="clock">
 	<span class="hours">--</span><span class="minutes">--</span>
@@ -165,11 +202,22 @@ function refreshTime() {
 	var unsafeURLs = document.getElementsByClassName("unsafe");
 	for (i = 0, len = unsafeURLs.length; i < len; ++i) {
 		unsafeURLs[i].addEventListener("click", function(e) {
-			e.preventDefault();
 			// Open the URL via the background page
-			chrome.extension.sendRequest({type: 'openURL', url: this.href});
+			chrome.extension.sendRequest({type: "openURL", url: this.href});
+			e.preventDefault();
 		}, false);
 	}
+
+	// Setup fullscreen mode handler
+	locationNode = document.getElementById("location");
+	addressNode = document.getElementById("address-bar");
+	document.getElementById("location-form").addEventListener("submit", function(e) {
+		e.preventDefault();
+		location.href = "http://" + addressNode.value;
+	}, false);
+
+	checkFullscreen();
+	addEventListener("resize", checkFullscreen, false);
 })();
 </script>
 
