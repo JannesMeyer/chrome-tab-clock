@@ -10,7 +10,6 @@
 	padding: 0;
 }
 body {
-	-webkit-user-select: none;
 	background-color: #f1f1f1;
 	font-family: sans-serif;
 	font-size: 15px;
@@ -143,9 +142,6 @@ function pad(object, styleSettings) {
 }
 
 function refreshTime() {
-	if (timeOutOfSync) {
-		return;
-	}
 	var date = new Date();
 	var twoDigits = {width: 2, fillCharacter: "0"};
 	// Set the new text
@@ -165,27 +161,15 @@ function refreshTime() {
 }
 
 function checkFullscreen() {
-	console.log("resized");
 	if (screen.height === window.outerHeight) {
-		// TODO: What about downloads bar, dev tools?
+		// downloads bar, dev tools?
 		locationNode.classList.remove("hidden");
 		addressNode.focus();
+		return true;
 	} else {
-		// will be done more than once when not in fullscreen
 		locationNode.classList.add("hidden");
+		return false;
 	}
-}
-
-function artificiallyIncreaseTime() {
-	if (!timeOutOfSync) {
-		timeOutOfSync = new Date();
-	}
-	// Add 1 minute
-	timeOutOfSync.setMinutes((timeOutOfSync.getMinutes() + 1) % 60);
-	// Set the new text
-	var twoDigits = {width: 2, fillCharacter: "0"};
-	clocks[0].hours.nodeValue = pad(timeOutOfSync.getHours(), twoDigits);
-	clocks[0].minutes.nodeValue = pad(timeOutOfSync.getMinutes(), twoDigits);
 }
 </script>
 </head>
@@ -208,10 +192,6 @@ function artificiallyIncreaseTime() {
 
 <script>
 (function() {
-	// Artificial time increase
-	timeOutOfSync = false;
-	document.body.addEventListener("click", artificiallyIncreaseTime, false);
-
 	// Setup a global variable for the clock
 	clocks = [document.getElementById("clock")];
 
@@ -238,8 +218,8 @@ function artificiallyIncreaseTime() {
 	locationNode = document.getElementById("location");
 	addressNode = document.getElementById("address-bar");
 	document.getElementById("location-form").addEventListener("submit", function(e) {
-		location.href = "http://" + addressNode.value;
 		e.preventDefault();
+		location.href = "http://" + addressNode.value;
 	}, false);
 
 	checkFullscreen();
