@@ -10,6 +10,7 @@
 	padding: 0;
 }
 body {
+	-webkit-user-select: none;
 	background-color: #f1f1f1;
 	font-family: sans-serif;
 	font-size: 15px;
@@ -162,13 +163,12 @@ function refreshTime() {
 
 function checkFullscreen() {
 	if (screen.height === window.outerHeight) {
-		// downloads bar, dev tools?
+		// TODO: What about downloads bar, dev tools?
 		locationNode.classList.remove("hidden");
 		addressNode.focus();
-		return true;
 	} else {
+		// will be done more than once when not in fullscreen
 		locationNode.classList.add("hidden");
-		return false;
 	}
 }
 </script>
@@ -218,8 +218,8 @@ function checkFullscreen() {
 	locationNode = document.getElementById("location");
 	addressNode = document.getElementById("address-bar");
 	document.getElementById("location-form").addEventListener("submit", function(e) {
-		e.preventDefault();
 		location.href = "http://" + addressNode.value;
+		e.preventDefault();
 	}, false);
 
 	checkFullscreen();
