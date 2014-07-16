@@ -4,7 +4,7 @@ Tab Clock is a Google Chrome extension that makes the 'New Tab' page distraction
 
 Furthermore, it shows some convenient shortcut links at the bottom of the page.
 
-![Screenshot](https://camo.githubusercontent.com/8117d0c39b809fee0f7aa0998d09b5e737d55098/687474703a2f2f692e696d6775722e636f6d2f764e496b4f2e706e67)
+![Screenshot](https://cloud.githubusercontent.com/assets/704336/3597308/4fe455ae-0cd0-11e4-8517-4df83ddcd960.png)
 
 The font Helvetica Neue should be installed on your system for the best experience.
 
