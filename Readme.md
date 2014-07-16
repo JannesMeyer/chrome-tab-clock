@@ -14,7 +14,7 @@ Protip: Disable your system's clock like this:
 
 ## Installation
 
-Get the extension from the [Downloads section](https://github.com/JannesMeyer/Tab-Clock/downloads) or from the [Chrome Web Store](https://chrome.google.com/webstore/detail/tab-clock/mjddhoajkbckpgjlhnanopanjhalbgij).
+Get the extension from the [Releases section](https://github.com/JannesMeyer/Tab-Clock/releases) or from the [Chrome Web Store](https://chrome.google.com/webstore/detail/tab-clock/mjddhoajkbckpgjlhnanopanjhalbgij).
 
 ## License
 
