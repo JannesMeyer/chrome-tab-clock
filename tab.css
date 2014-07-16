@@ -1,0 +1,64 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+
+	font-size: 15px;
+	font-family: sans-serif;
+	background-color: #f1f1f1;
+	-webkit-user-select: none;
+	cursor: default;
+}
+body {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+/*
+ * Clock
+ */
+.m-clock {
+	font-size: 13rem;
+	font-family: 'Helvetica Neue', 'FrutigerLTStd-UltraBlack', 'Myriad Pro Light', sans-serif;
+	font-weight: 100;
+}
+.m-clock > .hours,
+.m-clock > .minutes {
+	padding: 0 20px 4px;
+	/*margin: 0 5px;*/
+	/*background: rgba(255, 255, 255, 0.8);*/
+}
+.m-clock > .minutes {
+	color: #db3d2a;
+}
+
+/*
+ * Links
+ */
+.m-links {
+	position: absolute;
+	left: 31px;
+	bottom: 31px;
+}
+.m-links > li {
+	display: inline;
+}
+.m-links > li > a {
+	padding: 8px 12px;
+	color: #ccc;
+	text-decoration: none;
+	font-weight: bold;
+}
+.m-links > li > a:hover,
+.m-links > li > a:focus {
+	color: #484848;
+	background: #ddd;
+}
+.m-links > li > a:active {
+	color: #fff;
+	background: #d33;
+}

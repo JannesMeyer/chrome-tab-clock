@@ -1,16 +1,13 @@
 {
+	"manifest_version": 2,
 	"name": "Tab Clock",
 	"version": "1.0",
 	"description": "Shows a clock on the 'New Tab' page.",
 
 	"icons": {
-		"48": "images/icon48.png"
+		"48": "icon-48.png"
 	},
 	"chrome_url_overrides": {
 		"newtab": "tab.html"
-	},
-	"background_page": "background.html",
-	"permissions": [
-		"chrome://favicon/"
-	]
+	}
 }
