@@ -1,11 +1,13 @@
 {
 	"manifest_version": 2,
 	"name": "Tab Clock",
+	"short_name": "Clock",
 	"version": "1.0",
-	"description": "Shows a clock on the 'New Tab' page.",
-
+	"description": "Shows a clock on the 'New Tab' page",
+	"homepage_url": "https://github.com/JannesMeyer/Tab-Clock",
 	"icons": {
-		"48": "icon-48.png"
+		"48": "icon-48.png",
+		"128": "icon-128.png"
 	},
 	"chrome_url_overrides": {
 		"newtab": "tab.html"
