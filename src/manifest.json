@@ -4,7 +4,7 @@
 	"short_name": "Clock",
 	"version": "1.0",
 	"description": "Shows a clock on the 'New Tab' page",
-	"homepage_url": "https://github.com/JannesMeyer/Tab-Clock",
+	"homepage_url": "https://github.com/JannesMeyer/chrome-tab-clock",
 	"icons": {
 		"48": "icon-48.png",
 		"128": "icon-128.png"
