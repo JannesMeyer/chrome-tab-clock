@@ -1,13 +1,95 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Tab</title>
-	<link rel="stylesheet" href="tab.css">
-	<script defer src="tab.js"></script>
+<meta charset="utf-8">
+<title>Tab</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+
+	font-size: 15px;
+	font-family: sans-serif;
+	background-color: #f1f1f1;
+	cursor: default;
+	-webkit-user-select: none;
+}
+body {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+/*
+ * Clock
+ */
+.m-clock {
+	font-size: 13rem;
+	font-family: 'Helvetica Neue', 'FrutigerLTStd-UltraBlack', 'Myriad Pro Light', sans-serif;
+	font-weight: 100;
+	text-rendering: geometricPrecision;
+	transition: background 0.4s ease;
+	text-align: center;
+	padding: 0 22px 4px;
+}
+.m-clock:active {
+	/*-webkit-text-stroke: 5px;*/
+	background: #fff;
+	transition: background 0.2s cubic-bezier(0.2,0,.03,1);
+}
+.m-clock .minutes {
+	color: #db3d2a;
+}
+.m-date {
+	position: absolute;
+	left: 0;
+	bottom: 20px;
+	width: 100%;
+
+	font-size: 1.75rem;
+	font-weight: 200;
+	color: #999;
+	text-align: center;
+}
+
+/*
+ * Links
+ */
+.m-links {
+	position: absolute;
+	left: 31px;
+	bottom: 31px;
+}
+.m-links > li {
+	display: inline;
+}
+.m-links > li > a {
+	padding: 8px 12px;
+	color: #ccc;
+	text-decoration: none;
+	font-weight: bold;
+}
+.m-links > li > a:hover,
+.m-links > li > a:focus {
+	color: #484848;
+	background: #ddd;
+}
+.m-links > li > a:active {
+	color: #fff;
+	background: #d33;
+}
+</style>
+<script defer src="tab.js"></script>
 </head>
 <body>
-	<div class="m-clock"><span class="hours"> </span><span class="minutes"> </span></div>
-	<ul class="m-links"><li><a href="https://www.google.com/calendar/render">Calendar</a></li><li><a href="https://mail.google.com/mail/u/0/#inbox">Mail</a></li></ul>
+	<div class="m-clock">
+		<span class="hours"> </span>
+		<span class="minutes"> </span>
+	</div>
+	<div class="m-date"> </div>
 </body>
 </html>

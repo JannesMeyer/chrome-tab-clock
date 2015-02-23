@@ -1,6 +1,8 @@
+var locale = 'de-DE';
 var clock = {
-	hours: document.querySelector('.m-clock > .hours').firstChild,
-	minutes: document.querySelector('.m-clock > .minutes').firstChild
+	hours: document.querySelector('.m-clock .hours').firstChild,
+	minutes: document.querySelector('.m-clock .minutes').firstChild,
+	date: document.querySelector('.m-date').firstChild
 };
 render();
 
@@ -15,12 +17,13 @@ function render() {
 	var minutes = now.getMinutes();
 	var seconds = now.getSeconds();
 
-	// var shift = -7;
-	// var dst = +1;
-	// var hours = (now.getUTCHours() + shift + dst + 24) % 24;
-
 	clock.hours.data = hours;
 	clock.minutes.data = padZero(minutes);
+	clock.date.data = now.toLocaleString(locale, {
+		day: 'numeric',
+		month: 'long',
+		year: 'numeric'
+	});
 
 	setTimeout(render, (60 - seconds) * 1000);
 }
