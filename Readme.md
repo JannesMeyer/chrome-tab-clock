@@ -1,6 +1,6 @@
 # Tab Clock #
 
-Tab Clock is a Google Chrome extension that makes the 'New Tab' page distraction-free by replacing it with a simple, digital clock.
+Tab Clock is an amazing Google Chrome extension that makes the 'New Tab' page distraction-free by replacing it with a simple, digital clock.
 
 Furthermore, it shows some convenient shortcut links at the bottom of the page.
 
@@ -14,7 +14,7 @@ Protip: Disable your system's clock like this:
 
 ## Installation ##
 
-Get the extension from the [Releases section](https://github.com/JannesMeyer/chrome-tab-clock/releases) or from the [Chrome Web Store](https://chrome.google.com/webstore/detail/tab-clock/mjddhoajkbckpgjlhnanopanjhalbgij).
+Get the extension from [Releases section](https://github.com/JannesMeyer/chrome-tab-clock/releases) or from the [Chrome Web Store](https://chrome.google.com/webstore/detail/tab-clock/mjddhoajkbckpgjlhnanopanjhalbgij).
 
 ## License ##
 
